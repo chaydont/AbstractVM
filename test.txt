@@ -1,0 +1,5 @@
+int8(130)
+push int16(3112)
+bebeebe int16(0)12
+pushaaaa int32(2332) ;asdasa int8(12)
+add float
