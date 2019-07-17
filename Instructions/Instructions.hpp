@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Int32Token.hpp                                     :+:      :+:    :+:   */
+/*   Instructions.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chaydont <chaydont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/18 14:02:17 by chaydont          #+#    #+#             */
-/*   Updated: 2019/07/10 12:51:54 by chaydont         ###   ########.fr       */
+/*   Created: 2019/07/17 17:02:19 by chaydont          #+#    #+#             */
+/*   Updated: 2019/07/17 17:02:29 by chaydont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INT32TOKEN_HPP
-#define INT32TOKEN_HPP
+#ifndef INSTRUCTIONS_HPP
+#define INSTRUCTIONS_HPP
 
-#include "IToken.hpp"
-#include <cstdint>
+#include "Add.hpp"
+#include "Pop.hpp"
 
-struct Int32Token : public IToken {
-    Int32Token(int32_t value) : value(value) {}
-    void display() const { std::cout << "Int32 : " << value << std::endl; }
-    int32_t value;
-};
-
-#endif /* INT32TOKEN_HPP */
+#endif /* INSTRUCTIONS_HPP */

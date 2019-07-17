@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Add.hpp                                            :+:      :+:    :+:   */
+/*   Add.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chaydont <chaydont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/10 15:23:58 by chaydont          #+#    #+#             */
-/*   Updated: 2019/07/10 18:33:31 by chaydont         ###   ########.fr       */
+/*   Created: 2019/07/17 18:10:26 by chaydont          #+#    #+#             */
+/*   Updated: 2019/07/17 18:23:50 by chaydont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ADD_HPP
-#define ADD_HPP
+#include "Add.hpp"
 
-#include "Instruction.hpp"
+Add::Add() {}
 
-class Add : public Instruction {
-    public:
-        Add();
-        virtual ~Add();
-        virtual void execute();
-};
+Add::~Add() {}
 
-#endif /* ADD_HPP */
+void Add::execute(std::vector<IOperand> memory) {}

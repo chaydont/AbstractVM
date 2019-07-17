@@ -6,7 +6,7 @@
 /*   By: chaydont <chaydont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 14:07:23 by chaydont          #+#    #+#             */
-/*   Updated: 2019/07/10 18:56:40 by chaydont         ###   ########.fr       */
+/*   Updated: 2019/07/17 18:39:41 by chaydont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include <vector>
-#include <map>
-#include <algorithm>
-#include <iterator>
+#include <list>
 
 #include "TokenFactory.hpp"
 #include "Exceptions.hpp"
@@ -29,7 +26,7 @@ class Lexer {
     private:
         static const std::string instructions[11];
 
-        std::vector<IToken*> tokens;
+        std::list<IToken*> tokens;
         bool readLine(std::stringstream &);
         IToken *createToken(std::string);
         IToken *detectInstr(std::string);
@@ -49,7 +46,8 @@ class Lexer {
 
         void read(std::istream&);
         void display() const;
-        std::vector<IToken*> getTokens();
+        bool checkError() const;
+        std::list<IToken*> getTokens();
 };
 
 #endif /* LEXER_HPP */

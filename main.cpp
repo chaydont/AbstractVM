@@ -6,7 +6,7 @@
 /*   By: chaydont <chaydont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 14:42:32 by chaydont          #+#    #+#             */
-/*   Updated: 2019/07/10 15:20:47 by chaydont         ###   ########.fr       */
+/*   Updated: 2019/07/17 18:40:01 by chaydont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ int main(int argc, char **argv){
         return 0;
     }
     lexer.display();
+    if (lexer.checkError()){
+        return 0;
+    }
     // parser.read(lexer.getTokens());
 
 }

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   InstrToken.hpp                                     :+:      :+:    :+:   */
+/*   Tokens.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chaydont <chaydont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/18 16:35:04 by chaydont          #+#    #+#             */
-/*   Updated: 2019/07/17 17:06:47 by chaydont         ###   ########.fr       */
+/*   Created: 2019/07/17 17:53:35 by chaydont          #+#    #+#             */
+/*   Updated: 2019/07/17 17:54:20 by chaydont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INSTRTOKEN_HPP
-#define INSTRTOKEN_HPP
+#ifndef TOKENS_HPP
+#define TOKENS_HPP
 
-#include "IToken.hpp"
+#include "ErrorToken.hpp"
+#include "OperandToken.hpp"
+#include "InstrToken.hpp"
+#include "NewLineToken.hpp"
 
-struct InstrToken : public IToken {
-    InstrToken(eInstruction value) : value(value) {}
-    void display() const { std::cout << "instr : " << value << std::endl; }
-    eInstruction value;
-};
-
-#endif /* INSTRTOKEN_HPP */
+#endif /* TOKENS_HPP */

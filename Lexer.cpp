@@ -6,7 +6,7 @@
 /*   By: chaydont <chaydont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 14:31:07 by chaydont          #+#    #+#             */
-/*   Updated: 2019/07/10 14:14:21 by chaydont         ###   ########.fr       */
+/*   Updated: 2019/07/17 18:47:58 by chaydont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ bool Lexer::readLine(std::stringstream &ss){
 IToken *Lexer::detectInstr(std::string str) {
     for (size_t i = 0; i < 11; i++){
         if (instructions[i] == str){
-            return TokenFactory::newToken(static_cast<e_instr>(i));
+            return TokenFactory::newToken(static_cast<eInstruction>(i));
         }
     }
     return NULL;
@@ -110,13 +110,23 @@ IToken *Lexer::getInt8(std::string str){
 }
 
 void Lexer::display() const {
-    for (size_t i = 0; i < tokens.size(); ++i){
-        tokens[i]->display();
+    for (const auto& token : tokens){
+        token->display();
     }
 }
 
-std::vector<IToken*> Lexer::getTokens(){
-    return tokens;
+bool Lexer::checkError() const {
+    size_t line = 1;
+    bool errorFound = false;
+    for (const auto& token : tokens){
+        if (dynamic_cast<NewLineToken*>(token)){
+            line++;
+        } else if (ErrorToken* error = dynamic_cast<ErrorToken*>(token)) {
+            std::cout << "Line 1 : " << error->value->what() << std::endl;
+            errorFound = true;
+        }
+    }
+    return errorFound;
 }
 
 const std::string Lexer::instructions[11] = {

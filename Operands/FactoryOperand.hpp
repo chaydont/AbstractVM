@@ -6,7 +6,7 @@
 /*   By: chaydont <chaydont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 18:01:10 by chaydont          #+#    #+#             */
-/*   Updated: 2019/07/10 18:52:30 by chaydont         ###   ########.fr       */
+/*   Updated: 2019/07/17 16:13:31 by chaydont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "IOperand.hpp"
 #include "Operand.hpp"
+#include "IToken.hpp"
 #include <sstream>
 
 class FactoryOperand {
@@ -24,6 +25,9 @@ class FactoryOperand {
         IOperand const *createInt32 (std::string const & value) const;
         IOperand const *createFloat (std::string const & value) const;
         IOperand const *createDouble(std::string const & value) const;
+
+        template<typename T> 
+        IOperand const *createAny(std::string const & value) const;
 
     public:
         IOperand const *createOperand(eOperandType type, std::string const &value) const;

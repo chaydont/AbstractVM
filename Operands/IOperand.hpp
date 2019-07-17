@@ -6,7 +6,7 @@
 /*   By: chaydont <chaydont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 15:31:13 by chaydont          #+#    #+#             */
-/*   Updated: 2019/07/10 17:59:59 by chaydont         ###   ########.fr       */
+/*   Updated: 2019/07/17 16:47:51 by chaydont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,7 @@
 #define IOPERAND_HPP
 
 #include <string>
-
-enum eOperandType{
-    INT8,
-    INT16,
-    INT32,
-    FLOAT,
-    DOUBLE
-};
+#include "IToken.hpp"
 
 class IOperand {
     public:

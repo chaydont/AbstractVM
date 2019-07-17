@@ -6,7 +6,7 @@
 /*   By: chaydont <chaydont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 16:38:03 by chaydont          #+#    #+#             */
-/*   Updated: 2019/07/10 18:54:26 by chaydont         ###   ########.fr       */
+/*   Updated: 2019/07/17 16:18:32 by chaydont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ERRORTOKEN_HPP
 
 #include "IToken.hpp"
-#include "../Exceptions.hpp"
+#include "Exceptions.hpp"
 #include <string>
 
 struct ErrorToken : public IToken {
